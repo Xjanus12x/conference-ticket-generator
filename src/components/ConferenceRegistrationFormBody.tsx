@@ -10,10 +10,12 @@ import { useEffect, useState } from "react";
 import { ErrorMessage } from "@/components/ui/ErrorMessage";
 
 const fileSizeLimit = 5 * 1024; // 5KB in bytes
-
 const conferenceRegistrationFormSchema = z.object({
   avatar: z
-    .instanceof(FileList, { message: "Please upload an image." })
+    .any()
+    .refine((file) => file instanceof FileList, {
+      message: "Please upload an image.",
+    })
     .refine((files) => files.length > 0, { message: "Image is required." })
     .transform((files) => files[0])
     .refine((file) => ["image/png", "image/jpeg"].includes(file.type), {
@@ -34,7 +36,6 @@ const conferenceRegistrationFormSchema = z.object({
     .email("Please enter a valid email address."),
   githubUsername: z.string().nonempty("GitHub username is required"),
 });
-
 type ConferenceRegistrationFormType = z.infer<
   typeof conferenceRegistrationFormSchema
 >;
@@ -58,15 +59,15 @@ export function ConferenceRegistrationFormBody() {
   const file = watch("avatar");
 
   useEffect(() => {
-    if (typeof window !== "undefined" && file && file instanceof FileList) {
-      const selectedFile = file[0];
-      if (selectedFile) {
-        const previewUrl = URL.createObjectURL(selectedFile);
-        setPreview(previewUrl);
-      }
+    const selectedFile = file instanceof FileList ? file[0] : file;
+
+    if (selectedFile) {
+      const previewUrl = URL.createObjectURL(selectedFile);
+      setPreview(previewUrl);
+    } else {
+      setPreview(null);
     }
   }, [file]);
-
 
   const onSubmit: SubmitHandler<ConferenceRegistrationFormType> = ({
     fullname,
