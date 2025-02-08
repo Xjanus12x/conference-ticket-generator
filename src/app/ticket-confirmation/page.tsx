@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 
 type TicketConfirmationProps = {
@@ -7,6 +8,12 @@ type TicketConfirmationProps = {
     email: string;
     "github-username": string;
   }>;
+};
+
+export const metadata: Metadata = {
+  title: "Ticket Confirmation - Coding Conf 2025",
+  description:
+    "Your ticket to Coding Conf 2025 is ready! Check your email for more details.",
 };
 
 export default async function TicketConfirmation({
@@ -23,7 +30,7 @@ export default async function TicketConfirmation({
 
   return (
     <section>
-      <article >
+      <article>
         <header className="text-center mb-10 max-w-5xl mx-auto md:mb-20">
           <Image
             className="w-auto h-6 mx-auto md:h-auto"
@@ -42,7 +49,8 @@ export default async function TicketConfirmation({
             ! Your ticket is ready.
           </h2>
           <p className="text-neutral-300 text-balance md:text-xl ">
-            We've emailed your ticket to <span className="text-orange-500">{email}</span> and will send
+            We've emailed your ticket to{" "}
+            <span className="text-orange-500">{email}</span> and will send
             updates in the run up to the event.
           </p>
         </header>
@@ -67,7 +75,9 @@ export default async function TicketConfirmation({
                   height={0}
                 />
                 <div className="text-neutral-0">
-                  <h2 className="text-2xl font-extrabold md:text-5xl">Coding Conf</h2>
+                  <h2 className="text-2xl font-extrabold md:text-5xl">
+                    Coding Conf
+                  </h2>
                   <span className="text-sm text-neutral-300 md:text-lg">
                     Jan 31, 2025 / Austin, TX
                   </span>
