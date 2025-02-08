@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 type TicketConfirmationProps = {
-  searchParams: Promise<{
+  searchParams: {
     "avatar-url": string;
     fullname: string;
     email: string;
     "github-username": string;
-  }>;
+  };
 };
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Your ticket to Coding Conf 2025 is ready! Check your email for more details.",
 };
 
-export default async function TicketConfirmation({
+export default function TicketConfirmation({
   searchParams,
 }: TicketConfirmationProps) {
   const {
@@ -24,7 +24,7 @@ export default async function TicketConfirmation({
     fullname,
     email,
     "github-username": githubUsername,
-  } = await searchParams;
+  } = searchParams;
 
   const fullNameArr = fullname.trim().split(" ");
 
