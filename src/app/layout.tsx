@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-dvh antialiased bg-mobile bg-size-mobile bg-no-repeat md:bg-desktop md:bg-size-desktop bg-position-mobile md:bg-position-desktop">
+      <body className="min-h-dvh antialiased bg-mobile bg-size-mobile bg-no-repeat md:bg-desktop md:bg-size-desktop bg-position-mobile">
         <main className="px-4 pt-8 pb-36 2xl:pb-4">{children}</main>
       </body>
     </html>
