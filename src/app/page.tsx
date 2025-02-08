@@ -1,5 +1,12 @@
 import { ConferenceRegistrationFormHeader } from "@/components/ConferenceRegistrationFormHeader";
 import { ConferenceRegistrationFormBody } from "./ConferenceRegistrationFormBody";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conference Registration Form",
+  description:
+    "Register for the upcoming conference. Fill out the form to secure your spot!",
+};
 
 export default function ConferenceRegistrationForm() {
   return (
