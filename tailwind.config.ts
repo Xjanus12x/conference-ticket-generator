@@ -35,10 +35,7 @@ export default {
         "size-mobile": "cover, 7rem, contain, cover",
         "size-desktop": "cover, auto, auto, cover",
       },
-      backgroundPosition: {
-        "position-mobile": "top, top 25 right, bottom left, center",
-        "position-desktop": "top, top 70 right, bottom left, center",
-      },
+
     },
   },
   plugins: [],

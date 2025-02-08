@@ -24,3 +24,10 @@ input[type="file"]::-webkit-file-upload-button {
   background-clip: text;
   color: transparent;
 }
+.bg-position-mobile {
+  background-position: top, top 25% right, bottom left, center;
+}
+
+.bg-position-desktop {
+  background-position: top, top 70% right, bottom left, center;
+}
