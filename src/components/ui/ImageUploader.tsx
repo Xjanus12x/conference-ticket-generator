@@ -45,7 +45,7 @@ export function ImageUploader({
       <div className="flex gap-2 text-neutral-0">
         <InfoIcon />
         <span className="text-xs text-neutral-300">
-          "Upload your photo (JPG or PNG, max size: 500kb)
+          Upload your photo (JPG or PNG, max size: 500kb)
         </span>
       </div>
     </div>
