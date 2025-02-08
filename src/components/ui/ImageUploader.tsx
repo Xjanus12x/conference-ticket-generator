@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { memo } from "react";
 import { InfoIcon } from "./InfoIcon";
 
 type ImageUploaderProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -43,17 +42,8 @@ export function ImageUploader({
         </div>
       </label>
 
-      {/* Upload Info */}
       <div className="flex gap-2 text-neutral-0">
         <InfoIcon />
-        {/* <Image
-          className="w-auto h-auto text"
-          aria-hidden="true"
-          src="/assets/images/icon-info.svg"
-          alt="Info icon"
-          width={20}
-          height={20}
-        /> */}
         <span className="text-xs text-neutral-300">
           "Upload your photo (JPG or PNG, max size: 500kb)
         </span>
