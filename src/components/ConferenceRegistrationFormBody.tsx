@@ -58,15 +58,15 @@ export function ConferenceRegistrationFormBody() {
   const file = watch("avatar");
 
   useEffect(() => {
-    const selectedFile = file instanceof FileList ? file[0] : file;
-
-    if (selectedFile) {
-      const previewUrl = URL.createObjectURL(selectedFile);
-      setPreview(previewUrl);
-    } else {
-      setPreview(null);
+    if (typeof window !== "undefined" && file && file instanceof FileList) {
+      const selectedFile = file[0];
+      if (selectedFile) {
+        const previewUrl = URL.createObjectURL(selectedFile);
+        setPreview(previewUrl);
+      }
     }
   }, [file]);
+
 
   const onSubmit: SubmitHandler<ConferenceRegistrationFormType> = ({
     fullname,
