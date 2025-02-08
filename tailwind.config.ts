@@ -25,10 +25,10 @@ export default {
       },
       backgroundImage: {
         mobile:
-          "url('/assets/images/pattern-lines.svg'), url('/assets/images/pattern-squiggly-line-top.svg') ,url('/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), url('/assets/images/background-mobile.png')",
+          "url('/assets/images/pattern-lines.svg'), url('/assets/images/pattern-squiggly-line-top.svg'), url('/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), url('/assets/images/background-mobile.png')",
 
         desktop:
-          "url('/assets/images/pattern-lines.svg'), url('/assets/images/pattern-squiggly-line-top.svg') ,url('/assets/images/pattern-squiggly-line-bottom-desktop.svg'), url('/assets/images/background-desktop.png')",
+          "url('/assets/images/pattern-lines.svg'), url('/assets/images/pattern-squiggly-line-top.svg'), url('/assets/images/pattern-squiggly-line-bottom-desktop.svg'), url('/assets/images/background-desktop.png')",
       },
 
       backgroundSize: {
