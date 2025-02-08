@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 type TicketConfirmationProps = {
-  searchParams: {
+  searchParams: Promise<{
     "avatar-url"?: string;
     fullname?: string;
     email?: string;
     "github-username"?: string;
-  };
+  }>;
 };
 
 export const metadata: Metadata = {
@@ -16,17 +16,19 @@ export const metadata: Metadata = {
     "Your ticket to Coding Conf 2025 is ready! Check your email for more details.",
 };
 
-export default function TicketConfirmation({
+export default async function TicketConfirmation({
   searchParams,
 }: TicketConfirmationProps) {
+  const resolvedSearchParams = await searchParams; // Resolve the promise first
+
   const {
     "avatar-url": avatarUrl,
     fullname,
     email,
     "github-username": githubUsername,
-  } = searchParams;
+  } = resolvedSearchParams;
 
-  const fullNameArr = fullname.trim().split(" ");
+  const fullNameArr = fullname?.trim().split(" ");
 
   return (
     <section>
@@ -43,7 +45,7 @@ export default function TicketConfirmation({
 
           <h2 className="text-3xl font-bold mt-8 mb-4 text-neutral-0 md:text-6xl">
             Congrats,
-            {fullNameArr.map((name, i) => (
+            {fullNameArr?.map((name, i) => (
               <span className="gradient-text" key={i}>
                 &nbsp; {name}
               </span>
@@ -90,7 +92,7 @@ export default function TicketConfirmation({
                 <Image
                   className="size-12 self-end rounded-md md:size-20 md:rounded-lg"
                   aria-hidden
-                  src={avatarUrl}
+                  src={avatarUrl ?? ""}
                   alt="Coding Conf Logo"
                   width={0}
                   height={0}
