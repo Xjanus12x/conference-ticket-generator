@@ -44,12 +44,12 @@ export default async function TicketConfirmation({
           <h2 className="text-3xl font-bold mt-8 mb-4 text-neutral-0 md:text-6xl">
             Congrats,
             {fullNameArr.map((name, i) => (
-              <span className="gradient-text">&nbsp; {name}</span>
+              <span className="gradient-text" key={i}>&nbsp; {name}</span>
             ))}
             ! Your ticket is ready.
           </h2>
           <p className="text-neutral-300 text-balance md:text-xl ">
-            We've emailed your ticket to{" "}
+            We've emailed your ticket to&nbsp;
             <span className="text-orange-500">{email}</span> and will send
             updates in the run up to the event.
           </p>
