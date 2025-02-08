@@ -3,10 +3,10 @@ import Image from "next/image";
 
 type TicketConfirmationProps = {
   searchParams: {
-    "avatar-url": string;
-    fullname: string;
-    email: string;
-    "github-username": string;
+    "avatar-url"?: string;
+    fullname?: string;
+    email?: string;
+    "github-username"?: string;
   };
 };
 
