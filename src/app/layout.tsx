@@ -1,12 +1,4 @@
-import { Inconsolata } from "next/font/google";
 import "./globals.css";
-
-const inconsolata = Inconsolata({
-  variable: "--font-inconsolata",
-  weight: ["400", "500", "700", "800"],
-  subsets: ["latin"],
-});
-
 
 export default function RootLayout({
   children,
