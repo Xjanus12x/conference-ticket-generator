@@ -1,5 +1,5 @@
 import { ConferenceRegistrationFormHeader } from "@/components/ConferenceRegistrationFormHeader";
-import { ConferenceRegistrationFormBody } from "./ConferenceRegistrationFormBody";
+import { ConferenceRegistrationFormBody } from "../components/ConferenceRegistrationFormBody";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
