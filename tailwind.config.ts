@@ -23,19 +23,6 @@ export default {
           700: "hsl(7, 71%, 60%)", // Darker Orange
         },
       },
-      backgroundImage: {
-        mobile:
-          "url('/assets/images/pattern-lines.svg'), url('/assets/images/pattern-squiggly-line-top.svg'), url('/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), url('/assets/images/background-mobile.png')",
-
-        desktop:
-          "url('/assets/images/pattern-lines.svg'), url('/assets/images/pattern-squiggly-line-top.svg'), url('/assets/images/pattern-squiggly-line-bottom-desktop.svg'), url('/assets/images/background-desktop.png')",
-      },
-
-      backgroundSize: {
-        "size-mobile": "cover, 7rem, contain, cover",
-        "size-desktop": "cover, auto, auto, cover",
-      },
-
     },
   },
   plugins: [],

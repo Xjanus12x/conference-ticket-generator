@@ -24,6 +24,27 @@ input[type="file"]::-webkit-file-upload-button {
   background-clip: text;
   color: transparent;
 }
-.bg-position-mobile {
-  background-position: top, top 25 right, bottom left, center;
+
+/* Default (Mobile) Styles */
+.bg-custom {
+  background-image: url("/assets/images/pattern-lines.svg"),
+    url("/assets/images/pattern-squiggly-line-top.svg"),
+    url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
+    url("/assets/images/background-mobile.png");
+  background-size: cover, 7rem, contain, cover;
+  background-position: top, top 25px right, bottom left, center;
+  background-repeat: no-repeat;
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  /* Adjust breakpoint as needed */
+  .bg-custom {
+    background-image: url("/assets/images/pattern-lines.svg"),
+      url("/assets/images/pattern-squiggly-line-top.svg"),
+      url("/assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+      url("/assets/images/background-desktop.png");
+    background-size: cover, auto, auto, cover;
+    background-position: top, top 70px right, bottom left, center;
+  }
 }
